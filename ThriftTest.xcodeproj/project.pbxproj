@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		134FA2A818E8891400661172 /* ServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2A718E8891400661172 /* ServiceFactory.m */; };
+		134FA2D018E889EE00661172 /* TBinaryProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2AD18E889EE00661172 /* TBinaryProtocol.m */; };
+		134FA2D118E889EE00661172 /* TProtocolException.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2B018E889EE00661172 /* TProtocolException.m */; };
+		134FA2D218E889EE00661172 /* TProtocolUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2B318E889EE00661172 /* TProtocolUtil.m */; };
+		134FA2D318E889EE00661172 /* TSocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2B618E889EE00661172 /* TSocketServer.m */; };
+		134FA2D418E889EE00661172 /* TApplicationException.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2B818E889EE00661172 /* TApplicationException.m */; };
+		134FA2D518E889EE00661172 /* TException.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2BA18E889EE00661172 /* TException.m */; };
+		134FA2D618E889EE00661172 /* TFramedTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2C018E889EE00661172 /* TFramedTransport.m */; };
+		134FA2D718E889EE00661172 /* THTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2C218E889EE00661172 /* THTTPClient.m */; };
+		134FA2D818E889EE00661172 /* TMemoryBuffer.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2C418E889EE00661172 /* TMemoryBuffer.m */; };
+		134FA2D918E889EE00661172 /* TNSFileHandleTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2C618E889EE00661172 /* TNSFileHandleTransport.m */; };
+		134FA2DA18E889EE00661172 /* TNSStreamTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2C818E889EE00661172 /* TNSStreamTransport.m */; };
+		134FA2DB18E889EE00661172 /* TSocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2CA18E889EE00661172 /* TSocketClient.m */; };
+		134FA2DC18E889EE00661172 /* TTransportException.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2CD18E889EE00661172 /* TTransportException.m */; };
+		134FA2DD18E889EE00661172 /* TSharedProcessorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2CF18E889EE00661172 /* TSharedProcessorFactory.m */; };
+		134FA2E018E88A2F00661172 /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 134FA2DF18E88A2F00661172 /* test.m */; };
 		1394A84E18E887F200D69F9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1394A84D18E887F200D69F9F /* Foundation.framework */; };
 		1394A85018E887F200D69F9F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1394A84F18E887F200D69F9F /* CoreGraphics.framework */; };
 		1394A85218E887F200D69F9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1394A85118E887F200D69F9F /* UIKit.framework */; };
@@ -23,6 +39,7 @@
 		1394A87518E887F200D69F9F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1394A85118E887F200D69F9F /* UIKit.framework */; };
 		1394A87D18E887F200D69F9F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1394A87B18E887F200D69F9F /* InfoPlist.strings */; };
 		1394A87F18E887F200D69F9F /* ThriftTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1394A87E18E887F200D69F9F /* ThriftTestTests.m */; };
+		1CE82ED39AC44537A81D21E6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2C6E631FA104B958CA25CF3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +53,45 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		134FA2A618E8891400661172 /* ServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceFactory.h; sourceTree = "<group>"; };
+		134FA2A718E8891400661172 /* ServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceFactory.m; sourceTree = "<group>"; };
+		134FA2AB18E889EE00661172 /* TBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBase.h; sourceTree = "<group>"; };
+		134FA2AC18E889EE00661172 /* TBinaryProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBinaryProtocol.h; sourceTree = "<group>"; };
+		134FA2AD18E889EE00661172 /* TBinaryProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBinaryProtocol.m; sourceTree = "<group>"; };
+		134FA2AE18E889EE00661172 /* TProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocol.h; sourceTree = "<group>"; };
+		134FA2AF18E889EE00661172 /* TProtocolException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolException.h; sourceTree = "<group>"; };
+		134FA2B018E889EE00661172 /* TProtocolException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TProtocolException.m; sourceTree = "<group>"; };
+		134FA2B118E889EE00661172 /* TProtocolFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolFactory.h; sourceTree = "<group>"; };
+		134FA2B218E889EE00661172 /* TProtocolUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProtocolUtil.h; sourceTree = "<group>"; };
+		134FA2B318E889EE00661172 /* TProtocolUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TProtocolUtil.m; sourceTree = "<group>"; };
+		134FA2B518E889EE00661172 /* TSocketServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSocketServer.h; sourceTree = "<group>"; };
+		134FA2B618E889EE00661172 /* TSocketServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSocketServer.m; sourceTree = "<group>"; };
+		134FA2B718E889EE00661172 /* TApplicationException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TApplicationException.h; sourceTree = "<group>"; };
+		134FA2B818E889EE00661172 /* TApplicationException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TApplicationException.m; sourceTree = "<group>"; };
+		134FA2B918E889EE00661172 /* TException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TException.h; sourceTree = "<group>"; };
+		134FA2BA18E889EE00661172 /* TException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TException.m; sourceTree = "<group>"; };
+		134FA2BB18E889EE00661172 /* TObjective-C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TObjective-C.h"; sourceTree = "<group>"; };
+		134FA2BC18E889EE00661172 /* TProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProcessor.h; sourceTree = "<group>"; };
+		134FA2BD18E889EE00661172 /* TProcessorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TProcessorFactory.h; sourceTree = "<group>"; };
+		134FA2BF18E889EE00661172 /* TFramedTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFramedTransport.h; sourceTree = "<group>"; };
+		134FA2C018E889EE00661172 /* TFramedTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFramedTransport.m; sourceTree = "<group>"; };
+		134FA2C118E889EE00661172 /* THTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THTTPClient.h; sourceTree = "<group>"; };
+		134FA2C218E889EE00661172 /* THTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = THTTPClient.m; sourceTree = "<group>"; };
+		134FA2C318E889EE00661172 /* TMemoryBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMemoryBuffer.h; sourceTree = "<group>"; };
+		134FA2C418E889EE00661172 /* TMemoryBuffer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMemoryBuffer.m; sourceTree = "<group>"; };
+		134FA2C518E889EE00661172 /* TNSFileHandleTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSFileHandleTransport.h; sourceTree = "<group>"; };
+		134FA2C618E889EE00661172 /* TNSFileHandleTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSFileHandleTransport.m; sourceTree = "<group>"; };
+		134FA2C718E889EE00661172 /* TNSStreamTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TNSStreamTransport.h; sourceTree = "<group>"; };
+		134FA2C818E889EE00661172 /* TNSStreamTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TNSStreamTransport.m; sourceTree = "<group>"; };
+		134FA2C918E889EE00661172 /* TSocketClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSocketClient.h; sourceTree = "<group>"; };
+		134FA2CA18E889EE00661172 /* TSocketClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSocketClient.m; sourceTree = "<group>"; };
+		134FA2CB18E889EE00661172 /* TTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTransport.h; sourceTree = "<group>"; };
+		134FA2CC18E889EE00661172 /* TTransportException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTransportException.h; sourceTree = "<group>"; };
+		134FA2CD18E889EE00661172 /* TTransportException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTransportException.m; sourceTree = "<group>"; };
+		134FA2CE18E889EE00661172 /* TSharedProcessorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSharedProcessorFactory.h; sourceTree = "<group>"; };
+		134FA2CF18E889EE00661172 /* TSharedProcessorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSharedProcessorFactory.m; sourceTree = "<group>"; };
+		134FA2DE18E88A2F00661172 /* test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		134FA2DF18E88A2F00661172 /* test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
 		1394A84A18E887F200D69F9F /* ThriftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThriftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1394A84D18E887F200D69F9F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1394A84F18E887F200D69F9F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +114,8 @@
 		1394A87A18E887F200D69F9F /* ThriftTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ThriftTestTests-Info.plist"; sourceTree = "<group>"; };
 		1394A87C18E887F200D69F9F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1394A87E18E887F200D69F9F /* ThriftTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThriftTestTests.m; sourceTree = "<group>"; };
+		5877303E88834676A0C7FBA1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		B2C6E631FA104B958CA25CF3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +126,7 @@
 				1394A85018E887F200D69F9F /* CoreGraphics.framework in Frameworks */,
 				1394A85218E887F200D69F9F /* UIKit.framework in Frameworks */,
 				1394A84E18E887F200D69F9F /* Foundation.framework in Frameworks */,
+				1CE82ED39AC44537A81D21E6 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +143,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		134FA2A918E889EE00661172 /* thrift */ = {
+			isa = PBXGroup;
+			children = (
+				134FA2DE18E88A2F00661172 /* test.h */,
+				134FA2DF18E88A2F00661172 /* test.m */,
+				134FA2AA18E889EE00661172 /* protocol */,
+				134FA2B418E889EE00661172 /* server */,
+				134FA2B718E889EE00661172 /* TApplicationException.h */,
+				134FA2B818E889EE00661172 /* TApplicationException.m */,
+				134FA2B918E889EE00661172 /* TException.h */,
+				134FA2BA18E889EE00661172 /* TException.m */,
+				134FA2BB18E889EE00661172 /* TObjective-C.h */,
+				134FA2BC18E889EE00661172 /* TProcessor.h */,
+				134FA2BD18E889EE00661172 /* TProcessorFactory.h */,
+				134FA2BE18E889EE00661172 /* transport */,
+				134FA2CE18E889EE00661172 /* TSharedProcessorFactory.h */,
+				134FA2CF18E889EE00661172 /* TSharedProcessorFactory.m */,
+			);
+			name = thrift;
+			path = src;
+			sourceTree = "<group>";
+		};
+		134FA2AA18E889EE00661172 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				134FA2AB18E889EE00661172 /* TBase.h */,
+				134FA2AC18E889EE00661172 /* TBinaryProtocol.h */,
+				134FA2AD18E889EE00661172 /* TBinaryProtocol.m */,
+				134FA2AE18E889EE00661172 /* TProtocol.h */,
+				134FA2AF18E889EE00661172 /* TProtocolException.h */,
+				134FA2B018E889EE00661172 /* TProtocolException.m */,
+				134FA2B118E889EE00661172 /* TProtocolFactory.h */,
+				134FA2B218E889EE00661172 /* TProtocolUtil.h */,
+				134FA2B318E889EE00661172 /* TProtocolUtil.m */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		134FA2B418E889EE00661172 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				134FA2B518E889EE00661172 /* TSocketServer.h */,
+				134FA2B618E889EE00661172 /* TSocketServer.m */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
+		134FA2BE18E889EE00661172 /* transport */ = {
+			isa = PBXGroup;
+			children = (
+				134FA2BF18E889EE00661172 /* TFramedTransport.h */,
+				134FA2C018E889EE00661172 /* TFramedTransport.m */,
+				134FA2C118E889EE00661172 /* THTTPClient.h */,
+				134FA2C218E889EE00661172 /* THTTPClient.m */,
+				134FA2C318E889EE00661172 /* TMemoryBuffer.h */,
+				134FA2C418E889EE00661172 /* TMemoryBuffer.m */,
+				134FA2C518E889EE00661172 /* TNSFileHandleTransport.h */,
+				134FA2C618E889EE00661172 /* TNSFileHandleTransport.m */,
+				134FA2C718E889EE00661172 /* TNSStreamTransport.h */,
+				134FA2C818E889EE00661172 /* TNSStreamTransport.m */,
+				134FA2C918E889EE00661172 /* TSocketClient.h */,
+				134FA2CA18E889EE00661172 /* TSocketClient.m */,
+				134FA2CB18E889EE00661172 /* TTransport.h */,
+				134FA2CC18E889EE00661172 /* TTransportException.h */,
+				134FA2CD18E889EE00661172 /* TTransportException.m */,
+			);
+			path = transport;
+			sourceTree = "<group>";
+		};
 		1394A84118E887F200D69F9F = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +219,7 @@
 				1394A87818E887F200D69F9F /* ThriftTestTests */,
 				1394A84C18E887F200D69F9F /* Frameworks */,
 				1394A84B18E887F200D69F9F /* Products */,
+				5877303E88834676A0C7FBA1 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +239,7 @@
 				1394A84F18E887F200D69F9F /* CoreGraphics.framework */,
 				1394A85118E887F200D69F9F /* UIKit.framework */,
 				1394A87218E887F200D69F9F /* XCTest.framework */,
+				B2C6E631FA104B958CA25CF3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,6 +247,7 @@
 		1394A85318E887F200D69F9F /* ThriftTest */ = {
 			isa = PBXGroup;
 			children = (
+				134FA2A918E889EE00661172 /* thrift */,
 				1394A85C18E887F200D69F9F /* AppDelegate.h */,
 				1394A85D18E887F200D69F9F /* AppDelegate.m */,
 				1394A85F18E887F200D69F9F /* Main_iPhone.storyboard */,
@@ -127,6 +258,8 @@
 				1394A86918E887F200D69F9F /* FlipsideViewController.m */,
 				1394A86B18E887F200D69F9F /* Images.xcassets */,
 				1394A85418E887F200D69F9F /* Supporting Files */,
+				134FA2A618E8891400661172 /* ServiceFactory.h */,
+				134FA2A718E8891400661172 /* ServiceFactory.m */,
 			);
 			path = ThriftTest;
 			sourceTree = "<group>";
@@ -167,9 +300,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1394A88218E887F200D69F9F /* Build configuration list for PBXNativeTarget "ThriftTest" */;
 			buildPhases = (
+				C68BCFE093304DB0906FB70A /* Check Pods Manifest.lock */,
 				1394A84618E887F200D69F9F /* Sources */,
 				1394A84718E887F200D69F9F /* Frameworks */,
 				1394A84818E887F200D69F9F /* Resources */,
+				D0691C3213BA44429159E24A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,15 +388,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C68BCFE093304DB0906FB70A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0691C3213BA44429159E24A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1394A84618E887F200D69F9F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				134FA2DB18E889EE00661172 /* TSocketClient.m in Sources */,
+				134FA2D918E889EE00661172 /* TNSFileHandleTransport.m in Sources */,
 				1394A85E18E887F200D69F9F /* AppDelegate.m in Sources */,
+				134FA2D618E889EE00661172 /* TFramedTransport.m in Sources */,
 				1394A86718E887F200D69F9F /* MainViewController.m in Sources */,
+				134FA2E018E88A2F00661172 /* test.m in Sources */,
 				1394A86A18E887F200D69F9F /* FlipsideViewController.m in Sources */,
+				134FA2D418E889EE00661172 /* TApplicationException.m in Sources */,
+				134FA2D118E889EE00661172 /* TProtocolException.m in Sources */,
 				1394A85A18E887F200D69F9F /* main.m in Sources */,
+				134FA2D318E889EE00661172 /* TSocketServer.m in Sources */,
+				134FA2D518E889EE00661172 /* TException.m in Sources */,
+				134FA2D718E889EE00661172 /* THTTPClient.m in Sources */,
+				134FA2DD18E889EE00661172 /* TSharedProcessorFactory.m in Sources */,
+				134FA2A818E8891400661172 /* ServiceFactory.m in Sources */,
+				134FA2D818E889EE00661172 /* TMemoryBuffer.m in Sources */,
+				134FA2DC18E889EE00661172 /* TTransportException.m in Sources */,
+				134FA2DA18E889EE00661172 /* TNSStreamTransport.m in Sources */,
+				134FA2D218E889EE00661172 /* TProtocolUtil.m in Sources */,
+				134FA2D018E889EE00661172 /* TBinaryProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +577,7 @@
 		};
 		1394A88318E887F200D69F9F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5877303E88834676A0C7FBA1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -406,6 +591,7 @@
 		};
 		1394A88418E887F200D69F9F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5877303E88834676A0C7FBA1 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -476,6 +662,7 @@
 				1394A88418E887F200D69F9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1394A88518E887F200D69F9F /* Build configuration list for PBXNativeTarget "ThriftTestTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +671,7 @@
 				1394A88718E887F200D69F9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ServiceFactory.h"
+
 @class FlipsideViewController;
 
 @protocol FlipsideViewControllerDelegate

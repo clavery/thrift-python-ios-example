@@ -7,6 +7,7 @@
 //
 
 #import "FlipsideViewController.h"
+#import "test.h"
 
 @interface FlipsideViewController ()
 
@@ -24,6 +25,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    ServiceFactory* services = [ServiceFactory sharedInstance];
+    
+    [services BulletinBoardClient:^(BulletinBoardClient* client) {
+        NSLog(@"Making Add Request");
+    
+        Message* message = [[Message alloc]initWithText:@"Bob's" date:@"Your Uncle"];
+        
+        @try {
+            [client add:message];
+        } @catch(MessageExistsException* e) {
+            NSLog(e.message);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,6 +51,19 @@
 
 - (IBAction)done:(id)sender
 {
+    ServiceFactory* services = [ServiceFactory sharedInstance];
+    
+    [services BulletinBoardClient:^(BulletinBoardClient* client) {
+        NSLog(@"Making Get Request");
+        
+        NSMutableArray* messages = [client get];
+        
+        for (Message* message in messages) {
+            NSLog([NSString stringWithFormat:@"Message<%@, %@>", message.text, message.date]);
+        }
+        
+    }];
+    
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
