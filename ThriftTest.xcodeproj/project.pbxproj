@@ -32,7 +32,6 @@
 		1394A86118E887F200D69F9F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1394A85F18E887F200D69F9F /* Main_iPhone.storyboard */; };
 		1394A86418E887F200D69F9F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1394A86218E887F200D69F9F /* Main_iPad.storyboard */; };
 		1394A86718E887F200D69F9F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1394A86618E887F200D69F9F /* MainViewController.m */; };
-		1394A86A18E887F200D69F9F /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1394A86918E887F200D69F9F /* FlipsideViewController.m */; };
 		1394A86C18E887F200D69F9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1394A86B18E887F200D69F9F /* Images.xcassets */; };
 		1394A87318E887F200D69F9F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1394A87218E887F200D69F9F /* XCTest.framework */; };
 		1394A87418E887F200D69F9F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1394A84D18E887F200D69F9F /* Foundation.framework */; };
@@ -106,8 +105,6 @@
 		1394A86318E887F200D69F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		1394A86518E887F200D69F9F /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		1394A86618E887F200D69F9F /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		1394A86818E887F200D69F9F /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
-		1394A86918E887F200D69F9F /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
 		1394A86B18E887F200D69F9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1394A87118E887F200D69F9F /* ThriftTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThriftTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1394A87218E887F200D69F9F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -254,8 +251,6 @@
 				1394A86218E887F200D69F9F /* Main_iPad.storyboard */,
 				1394A86518E887F200D69F9F /* MainViewController.h */,
 				1394A86618E887F200D69F9F /* MainViewController.m */,
-				1394A86818E887F200D69F9F /* FlipsideViewController.h */,
-				1394A86918E887F200D69F9F /* FlipsideViewController.m */,
 				1394A86B18E887F200D69F9F /* Images.xcassets */,
 				1394A85418E887F200D69F9F /* Supporting Files */,
 				134FA2A618E8891400661172 /* ServiceFactory.h */,
@@ -432,7 +427,6 @@
 				134FA2D618E889EE00661172 /* TFramedTransport.m in Sources */,
 				1394A86718E887F200D69F9F /* MainViewController.m in Sources */,
 				134FA2E018E88A2F00661172 /* test.m in Sources */,
-				1394A86A18E887F200D69F9F /* FlipsideViewController.m in Sources */,
 				134FA2D418E889EE00661172 /* TApplicationException.m in Sources */,
 				134FA2D118E889EE00661172 /* TProtocolException.m in Sources */,
 				1394A85A18E887F200D69F9F /* main.m in Sources */,

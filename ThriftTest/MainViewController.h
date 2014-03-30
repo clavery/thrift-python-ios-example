@@ -6,10 +6,13 @@
 //  Copyright (c) 2014 Charles Lavery. All rights reserved.
 //
 
-#import "FlipsideViewController.h"
+#import "ServiceFactory.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIPopoverControllerDelegate>
+@interface MainViewController : UIViewController
 
 @property (strong, nonatomic) UIPopoverController *flipsidePopoverController;
+
+- (IBAction)addMessage:(id)sender;
+- (IBAction)getMessages:(id)sender;
 
 @end

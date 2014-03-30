@@ -10,9 +10,15 @@
 
 @interface MainViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *messageText;
+@property (weak, nonatomic) IBOutlet UITextField *messageDate;
+
 @end
 
 @implementation MainViewController
+
+@synthesize messageText;
+@synthesize messageDate;
 
 - (void)viewDidLoad
 {
@@ -26,43 +32,45 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Flipside View Controller
-
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-    }
+    [self.view endEditing:YES];
 }
 
-- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController
+- (IBAction)addMessage:(id)sender
 {
-    self.flipsidePopoverController = nil;
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showAlternate"]) {
-        [[segue destinationViewController] setDelegate:self];
+    ServiceFactory* services = [ServiceFactory sharedInstance];
+    
+    [services BulletinBoardClient:^(BulletinBoardClient* client) {
+        NSLog(@"Making Add Request");
         
-        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-            UIPopoverController *popoverController = [(UIStoryboardPopoverSegue *)segue popoverController];
-            self.flipsidePopoverController = popoverController;
-            popoverController.delegate = self;
+        NSString* text = messageText.text;
+        
+        
+        Message* message = [[Message alloc]initWithText:messageText.text
+                                                   date:messageDate.text];
+        
+        @try {
+            [client add:message];
+        } @catch(MessageExistsException* e) {
+            NSLog(e.message);
         }
-    }
+    }];
 }
 
-- (IBAction)togglePopover:(id)sender
+- (IBAction)getMessages:(id)sender
 {
-    if (self.flipsidePopoverController) {
-        [self.flipsidePopoverController dismissPopoverAnimated:YES];
-        self.flipsidePopoverController = nil;
-    } else {
-        [self performSegueWithIdentifier:@"showAlternate" sender:sender];
-    }
+    ServiceFactory* services = [ServiceFactory sharedInstance];
+    
+    [services BulletinBoardClient:^(BulletinBoardClient* client) {
+        NSLog(@"Making Get Request");
+        
+        NSMutableArray* messages = [client get];
+        
+        for (Message* message in messages) {
+            NSLog([NSString stringWithFormat:@"Message<%@, %@>", message.text, message.date]);
+        }
+        
+    }];
 }
-
 @end

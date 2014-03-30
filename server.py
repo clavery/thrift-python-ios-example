@@ -1,4 +1,5 @@
 import os.path
+import time
 
 from thrift.protocol import TJSONProtocol, TBinaryProtocol
 from thrift.transport.TTransport import TTransportBase
@@ -24,6 +25,7 @@ class BulletinBoardService(Service, BulletinBoard.Iface):
     """Implments the BulletinBoard Service"""
     messages = []
     def add(self, message):
+        time.sleep(10)
         if message in self.messages:
             raise MessageExistsException("This message exists")
         self.messages.append(message)
@@ -77,15 +79,22 @@ class ThriftMiddleware(object):
         response = Response()
 
         if method == 'POST': # trap all post requests for example
-            # TODO: only catch request destined for our handlers and with
-            # proper MIME types
+            content_type_header = request.headers.get('Content-Type')
+
+            if not content_type_header:
+                response.status_code = 405
+                return response(environ, start_response)
 
             transport = TIOStreamTransport(request.stream, response.stream)
-            # TODO: determine protocol from HTTP headers
-            protocol = TBinaryProtocol.TBinaryProtocol(transport)
-            self.bb_processor.process(protocol, protocol)
+            if 'application/x-thrift' in content_type_header:
+                protocol = TBinaryProtocol.TBinaryProtocol(transport)
+            elif 'application/json' in content_type_header:
+                protocol = TJSONProtocol.TJSONProtocol(transport)
+            else:
+                response.status_code = 405
+                return response(environ, start_response)
 
-            print self.bb_handler.messages
+            self.bb_processor.process(protocol, protocol)
             return response(environ, start_response)
         else:
             return self.app(environ, start_response)
