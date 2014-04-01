@@ -337,6 +337,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Charles Lavery";
 				TargetAttributes = {
+					1394A84918E887F200D69F9F = {
+						DevelopmentTeam = D55Y8TGC48;
+					};
 					1394A87018E887F200D69F9F = {
 						TestTargetID = 1394A84918E887F200D69F9F;
 					};
@@ -575,10 +578,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThriftTest/ThriftTest-Prefix.pch";
 				INFOPLIST_FILE = "ThriftTest/ThriftTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -589,10 +595,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ThriftTest/ThriftTest-Prefix.pch";
 				INFOPLIST_FILE = "ThriftTest/ThriftTest-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

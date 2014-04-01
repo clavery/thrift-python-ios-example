@@ -21,31 +21,35 @@ static ServiceFactory *sharedfactory = nil;
     return sharedfactory;
 }
 
-+ (id)alloc
++ (id)alloc 
 {
     return [self sharedInstance];
 }
 
-- (id) init {
+- (id) init
+{
     if ( (self = [super init]) ) {
         queue = [[NSOperationQueue alloc] init];
         queue.name = @"Service Queue";
         queue.MaxConcurrentOperationCount = 1;
     
-        [self setUrl:@"http://127.0.0.1:5000/"];
+        [self setUrl:@"http://192.168.1.157:5000/"];
     }
     return self;
 }
 
-- (NSString*) url {
+- (NSString*) url
+{
     return url;
 }
 
-- (void) setUrl: (NSString*)newUrl {
+- (void) setUrl: (NSString*)newUrl
+{
     url = newUrl;
 }
 
-- (void) BulletinBoardClient:(void (^)(BulletinBoardClient *))callbackBlock {
+- (void) BulletinBoardClient:(void (^)(BulletinBoardClient *))callbackBlock
+{
     [queue addOperationWithBlock: ^ {
         NSURL *transportUrl = [NSURL URLWithString:url];
         

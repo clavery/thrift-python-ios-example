@@ -312,6 +312,129 @@
 
 @end
 
+@implementation User
+
+- (id) init
+{
+  self = [super init];
+#if TARGET_OS_IPHONE || (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+#endif
+  return self;
+}
+
+- (id) initWithName: (NSString *) name
+{
+  self = [super init];
+  __name = [name retain_stub];
+  __name_isset = YES;
+  return self;
+}
+
+- (id) initWithCoder: (NSCoder *) decoder
+{
+  self = [super init];
+  if ([decoder containsValueForKey: @"name"])
+  {
+    __name = [[decoder decodeObjectForKey: @"name"] retain_stub];
+    __name_isset = YES;
+  }
+  return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) encoder
+{
+  if (__name_isset)
+  {
+    [encoder encodeObject: __name forKey: @"name"];
+  }
+}
+
+- (void) dealloc
+{
+  [__name release_stub];
+  [super dealloc_stub];
+}
+
+- (NSString *) name {
+  return [[__name retain_stub] autorelease_stub];
+}
+
+- (void) setName: (NSString *) name {
+  [name retain_stub];
+  [__name release_stub];
+  __name = name;
+  __name_isset = YES;
+}
+
+- (BOOL) nameIsSet {
+  return __name_isset;
+}
+
+- (void) unsetName {
+  [__name release_stub];
+  __name = nil;
+  __name_isset = NO;
+}
+
+- (void) read: (id <TProtocol>) inProtocol
+{
+  NSString * fieldName;
+  int fieldType;
+  int fieldID;
+
+  [inProtocol readStructBeginReturningName: NULL];
+  while (true)
+  {
+    [inProtocol readFieldBeginReturningName: &fieldName type: &fieldType fieldID: &fieldID];
+    if (fieldType == TType_STOP) { 
+      break;
+    }
+    switch (fieldID)
+    {
+      case 1:
+        if (fieldType == TType_STRING) {
+          NSString * fieldValue = [inProtocol readString];
+          [self setName: fieldValue];
+        } else { 
+          [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+        }
+        break;
+      default:
+        [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+        break;
+    }
+    [inProtocol readFieldEnd];
+  }
+  [inProtocol readStructEnd];
+}
+
+- (void) write: (id <TProtocol>) outProtocol {
+  [outProtocol writeStructBeginWithName: @"User"];
+  if (__name_isset) {
+    if (__name != nil) {
+      [outProtocol writeFieldBeginWithName: @"name" type: TType_STRING fieldID: 1];
+      [outProtocol writeString: __name];
+      [outProtocol writeFieldEnd];
+    }
+  }
+  [outProtocol writeFieldStop];
+  [outProtocol writeStructEnd];
+}
+
+- (void) validate {
+  // check for required fields
+}
+
+- (NSString *) description {
+  NSMutableString * ms = [NSMutableString stringWithString: @"User("];
+  [ms appendString: @"name:"];
+  [ms appendFormat: @"\"%@\"", __name];
+  [ms appendString: @")"];
+  return [NSString stringWithString: ms];
+}
+
+@end
+
 static int32_t INT32CONSTANT = 9853;
 
 @implementation testConstants
@@ -322,7 +445,7 @@ static int32_t INT32CONSTANT = 9853;
 }
 @end
 
-@interface add_args : NSObject <TBase, NSCoding> {
+@interface BulletinBoard_add_args : NSObject <TBase, NSCoding> {
   Message * __msg;
 
   BOOL __msg_isset;
@@ -348,7 +471,7 @@ static int32_t INT32CONSTANT = 9853;
 
 @end
 
-@implementation add_args
+@implementation BulletinBoard_add_args
 
 - (id) init
 {
@@ -473,7 +596,7 @@ static int32_t INT32CONSTANT = 9853;
 
 @end
 
-@interface Add_result : NSObject <TBase, NSCoding> {
+@interface BulletinBoard_Add_result : NSObject <TBase, NSCoding> {
   MessageExistsException * __messageExistsException;
 
   BOOL __messageExistsException_isset;
@@ -499,7 +622,7 @@ static int32_t INT32CONSTANT = 9853;
 
 @end
 
-@implementation Add_result
+@implementation BulletinBoard_Add_result
 
 - (id) init
 {
@@ -616,7 +739,7 @@ static int32_t INT32CONSTANT = 9853;
 }
 
 - (NSString *) description {
-  NSMutableString * ms = [NSMutableString stringWithString: @"Add_result("];
+  NSMutableString * ms = [NSMutableString stringWithString: @"BulletinBoard_Add_result("];
   [ms appendString: @"messageExistsException:"];
   [ms appendFormat: @"%@", __messageExistsException];
   [ms appendString: @")"];
@@ -625,7 +748,7 @@ static int32_t INT32CONSTANT = 9853;
 
 @end
 
-@interface get_args : NSObject <TBase, NSCoding> {
+@interface BulletinBoard_get_args : NSObject <TBase, NSCoding> {
 }
 
 - (id) init;
@@ -637,7 +760,7 @@ static int32_t INT32CONSTANT = 9853;
 
 @end
 
-@implementation get_args
+@implementation BulletinBoard_get_args
 
 - (id) init
 {
@@ -697,7 +820,7 @@ static int32_t INT32CONSTANT = 9853;
 
 @end
 
-@interface Get_result : NSObject <TBase, NSCoding> {
+@interface BulletinBoard_Get_result : NSObject <TBase, NSCoding> {
   NSMutableArray * __success;
 
   BOOL __success_isset;
@@ -723,7 +846,7 @@ static int32_t INT32CONSTANT = 9853;
 
 @end
 
-@implementation Get_result
+@implementation BulletinBoard_Get_result
 
 - (id) init
 {
@@ -858,7 +981,7 @@ static int32_t INT32CONSTANT = 9853;
 }
 
 - (NSString *) description {
-  NSMutableString * ms = [NSMutableString stringWithString: @"Get_result("];
+  NSMutableString * ms = [NSMutableString stringWithString: @"BulletinBoard_Get_result("];
   [ms appendString: @"success:"];
   [ms appendFormat: @"%@", __success];
   [ms appendString: @")"];
@@ -912,7 +1035,7 @@ static int32_t INT32CONSTANT = 9853;
     [inProtocol readMessageEnd];
     @throw x;
   }
-  Add_result * result = [[[Add_result alloc] init] autorelease_stub];
+  BulletinBoard_Add_result * result = [[[BulletinBoard_Add_result alloc] init] autorelease_stub];
   [result read: inProtocol];
   [inProtocol readMessageEnd];
   if ([result messageExistsExceptionIsSet]) {
@@ -946,7 +1069,7 @@ static int32_t INT32CONSTANT = 9853;
     [inProtocol readMessageEnd];
     @throw x;
   }
-  Get_result * result = [[[Get_result alloc] init] autorelease_stub];
+  BulletinBoard_Get_result * result = [[[BulletinBoard_Get_result alloc] init] autorelease_stub];
   [result read: inProtocol];
   [inProtocol readMessageEnd];
   if ([result successIsSet]) {
@@ -1033,10 +1156,10 @@ static int32_t INT32CONSTANT = 9853;
 
 - (void) process_add_withSequenceID: (int32_t) seqID inProtocol: (id<TProtocol>) inProtocol outProtocol: (id<TProtocol>) outProtocol
 {
-  add_args * args = [[add_args alloc] init];
+  BulletinBoard_add_args * args = [[BulletinBoard_add_args alloc] init];
   [args read: inProtocol];
   [inProtocol readMessageEnd];
-  Add_result * result = [[Add_result alloc] init];
+  BulletinBoard_Add_result * result = [[BulletinBoard_Add_result alloc] init];
   [mService add: [args msg]];
   [outProtocol writeMessageBeginWithName: @"add"
                                     type: TMessageType_REPLY
@@ -1050,10 +1173,10 @@ static int32_t INT32CONSTANT = 9853;
 
 - (void) process_get_withSequenceID: (int32_t) seqID inProtocol: (id<TProtocol>) inProtocol outProtocol: (id<TProtocol>) outProtocol
 {
-  get_args * args = [[get_args alloc] init];
+  BulletinBoard_get_args * args = [[BulletinBoard_get_args alloc] init];
   [args read: inProtocol];
   [inProtocol readMessageEnd];
-  Get_result * result = [[Get_result alloc] init];
+  BulletinBoard_Get_result * result = [[BulletinBoard_Get_result alloc] init];
   [result setSuccess: [mService get]];
   [outProtocol writeMessageBeginWithName: @"get"
                                     type: TMessageType_REPLY
@@ -1070,6 +1193,676 @@ static int32_t INT32CONSTANT = 9853;
   [mService release_stub];
   [mMethodMap release_stub];
   [super dealloc_stub];
+}
+
+@end
+
+@interface UserService_add_args : NSObject <TBase, NSCoding> {
+User * __user;
+
+BOOL __user_isset;
+}
+
+#if TARGET_OS_IPHONE || (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+@property (nonatomic, retain, getter=user, setter=setUser:) User * user;
+#endif
+
+- (id) init;
+- (id) initWithUser: (User *) user;
+
+- (void) read: (id <TProtocol>) inProtocol;
+- (void) write: (id <TProtocol>) outProtocol;
+
+- (void) validate;
+
+#if !__has_feature(objc_arc)
+- (User *) user;
+- (void) setUser: (User *) user;
+#endif
+- (BOOL) userIsSet;
+
+@end
+
+@implementation UserService_add_args
+
+- (id) init
+{
+self = [super init];
+#if TARGET_OS_IPHONE || (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+#endif
+return self;
+}
+
+- (id) initWithUser: (User *) user
+{
+self = [super init];
+__user = [user retain_stub];
+__user_isset = YES;
+return self;
+}
+
+- (id) initWithCoder: (NSCoder *) decoder
+{
+self = [super init];
+if ([decoder containsValueForKey: @"user"])
+{
+  __user = [[decoder decodeObjectForKey: @"user"] retain_stub];
+  __user_isset = YES;
+}
+return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) encoder
+{
+if (__user_isset)
+{
+  [encoder encodeObject: __user forKey: @"user"];
+}
+}
+
+- (void) dealloc
+{
+[__user release_stub];
+[super dealloc_stub];
+}
+
+- (User *) user {
+return [[__user retain_stub] autorelease_stub];
+}
+
+- (void) setUser: (User *) user {
+[user retain_stub];
+[__user release_stub];
+__user = user;
+__user_isset = YES;
+}
+
+- (BOOL) userIsSet {
+return __user_isset;
+}
+
+- (void) unsetUser {
+[__user release_stub];
+__user = nil;
+__user_isset = NO;
+}
+
+- (void) read: (id <TProtocol>) inProtocol
+{
+NSString * fieldName;
+int fieldType;
+int fieldID;
+
+[inProtocol readStructBeginReturningName: NULL];
+while (true)
+{
+  [inProtocol readFieldBeginReturningName: &fieldName type: &fieldType fieldID: &fieldID];
+  if (fieldType == TType_STOP) { 
+    break;
+  }
+  switch (fieldID)
+  {
+    case 1:
+      if (fieldType == TType_STRUCT) {
+        User *fieldValue = [[User alloc] init];
+        [fieldValue read: inProtocol];
+        [self setUser: fieldValue];
+        [fieldValue release_stub];
+      } else { 
+        [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+      }
+      break;
+    default:
+      [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+      break;
+  }
+  [inProtocol readFieldEnd];
+}
+[inProtocol readStructEnd];
+}
+
+- (void) write: (id <TProtocol>) outProtocol {
+[outProtocol writeStructBeginWithName: @"add_args"];
+if (__user_isset) {
+  if (__user != nil) {
+    [outProtocol writeFieldBeginWithName: @"user" type: TType_STRUCT fieldID: 1];
+    [__user write: outProtocol];
+    [outProtocol writeFieldEnd];
+  }
+}
+[outProtocol writeFieldStop];
+[outProtocol writeStructEnd];
+}
+
+- (void) validate {
+// check for required fields
+}
+
+- (NSString *) description {
+NSMutableString * ms = [NSMutableString stringWithString: @"add_args("];
+[ms appendString: @"user:"];
+[ms appendFormat: @"%@", __user];
+[ms appendString: @")"];
+return [NSString stringWithString: ms];
+}
+
+@end
+
+@interface UserService_Add_result : NSObject <TBase, NSCoding> {
+}
+
+- (id) init;
+
+- (void) read: (id <TProtocol>) inProtocol;
+- (void) write: (id <TProtocol>) outProtocol;
+
+- (void) validate;
+
+@end
+
+@implementation UserService_Add_result
+
+- (id) init
+{
+self = [super init];
+return self;
+}
+
+- (id) initWithCoder: (NSCoder *) decoder
+{
+self = [super init];
+return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) encoder
+{
+}
+
+- (void) read: (id <TProtocol>) inProtocol
+{
+NSString * fieldName;
+int fieldType;
+int fieldID;
+
+[inProtocol readStructBeginReturningName: NULL];
+while (true)
+{
+  [inProtocol readFieldBeginReturningName: &fieldName type: &fieldType fieldID: &fieldID];
+  if (fieldType == TType_STOP) { 
+    break;
+  }
+  switch (fieldID)
+  {
+    default:
+      [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+      break;
+  }
+  [inProtocol readFieldEnd];
+}
+[inProtocol readStructEnd];
+}
+
+- (void) write: (id <TProtocol>) outProtocol {
+[outProtocol writeStructBeginWithName: @"Add_result"];
+
+[outProtocol writeFieldStop];
+[outProtocol writeStructEnd];
+}
+
+- (void) validate {
+// check for required fields
+}
+
+- (NSString *) description {
+NSMutableString * ms = [NSMutableString stringWithString: @"UserService_Add_result("];
+[ms appendString: @")"];
+return [NSString stringWithString: ms];
+}
+
+@end
+
+@interface UserService_get_args : NSObject <TBase, NSCoding> {
+}
+
+- (id) init;
+
+- (void) read: (id <TProtocol>) inProtocol;
+- (void) write: (id <TProtocol>) outProtocol;
+
+- (void) validate;
+
+@end
+
+@implementation UserService_get_args
+
+- (id) init
+{
+self = [super init];
+return self;
+}
+
+- (id) initWithCoder: (NSCoder *) decoder
+{
+self = [super init];
+return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) encoder
+{
+}
+
+- (void) read: (id <TProtocol>) inProtocol
+{
+NSString * fieldName;
+int fieldType;
+int fieldID;
+
+[inProtocol readStructBeginReturningName: NULL];
+while (true)
+{
+  [inProtocol readFieldBeginReturningName: &fieldName type: &fieldType fieldID: &fieldID];
+  if (fieldType == TType_STOP) { 
+    break;
+  }
+  switch (fieldID)
+  {
+    default:
+      [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+      break;
+  }
+  [inProtocol readFieldEnd];
+}
+[inProtocol readStructEnd];
+}
+
+- (void) write: (id <TProtocol>) outProtocol {
+[outProtocol writeStructBeginWithName: @"get_args"];
+[outProtocol writeFieldStop];
+[outProtocol writeStructEnd];
+}
+
+- (void) validate {
+// check for required fields
+}
+
+- (NSString *) description {
+NSMutableString * ms = [NSMutableString stringWithString: @"get_args("];
+[ms appendString: @")"];
+return [NSString stringWithString: ms];
+}
+
+@end
+
+@interface UserService_Get_result : NSObject <TBase, NSCoding> {
+NSMutableArray * __success;
+
+BOOL __success_isset;
+}
+
+#if TARGET_OS_IPHONE || (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+@property (nonatomic, retain, getter=success, setter=setSuccess:) NSMutableArray * success;
+#endif
+
+- (id) init;
+- (id) initWithSuccess: (NSMutableArray *) success;
+
+- (void) read: (id <TProtocol>) inProtocol;
+- (void) write: (id <TProtocol>) outProtocol;
+
+- (void) validate;
+
+#if !__has_feature(objc_arc)
+- (NSMutableArray *) success;
+- (void) setSuccess: (NSMutableArray *) success;
+#endif
+- (BOOL) successIsSet;
+
+@end
+
+@implementation UserService_Get_result
+
+- (id) init
+{
+self = [super init];
+#if TARGET_OS_IPHONE || (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+#endif
+return self;
+}
+
+- (id) initWithSuccess: (NSMutableArray *) success
+{
+self = [super init];
+__success = [success retain_stub];
+__success_isset = YES;
+return self;
+}
+
+- (id) initWithCoder: (NSCoder *) decoder
+{
+self = [super init];
+if ([decoder containsValueForKey: @"success"])
+{
+  __success = [[decoder decodeObjectForKey: @"success"] retain_stub];
+  __success_isset = YES;
+}
+return self;
+}
+
+- (void) encodeWithCoder: (NSCoder *) encoder
+{
+if (__success_isset)
+{
+  [encoder encodeObject: __success forKey: @"success"];
+}
+}
+
+- (void) dealloc
+{
+[__success release_stub];
+[super dealloc_stub];
+}
+
+- (NSMutableArray *) success {
+return [[__success retain_stub] autorelease_stub];
+}
+
+- (void) setSuccess: (NSMutableArray *) success {
+[success retain_stub];
+[__success release_stub];
+__success = success;
+__success_isset = YES;
+}
+
+- (BOOL) successIsSet {
+return __success_isset;
+}
+
+- (void) unsetSuccess {
+[__success release_stub];
+__success = nil;
+__success_isset = NO;
+}
+
+- (void) read: (id <TProtocol>) inProtocol
+{
+NSString * fieldName;
+int fieldType;
+int fieldID;
+
+[inProtocol readStructBeginReturningName: NULL];
+while (true)
+{
+  [inProtocol readFieldBeginReturningName: &fieldName type: &fieldType fieldID: &fieldID];
+  if (fieldType == TType_STOP) { 
+    break;
+  }
+  switch (fieldID)
+  {
+    case 0:
+      if (fieldType == TType_LIST) {
+        int _size5;
+        [inProtocol readListBeginReturningElementType: NULL size: &_size5];
+        NSMutableArray * fieldValue = [[NSMutableArray alloc] initWithCapacity: _size5];
+        int _i6;
+        for (_i6 = 0; _i6 < _size5; ++_i6)
+        {
+          User *_elem7 = [[User alloc] init];
+          [_elem7 read: inProtocol];
+          [fieldValue addObject: _elem7];
+          [_elem7 release_stub];
+        }
+        [inProtocol readListEnd];
+        [self setSuccess: fieldValue];
+        [fieldValue release_stub];
+      } else { 
+        [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+      }
+      break;
+    default:
+      [TProtocolUtil skipType: fieldType onProtocol: inProtocol];
+      break;
+  }
+  [inProtocol readFieldEnd];
+}
+[inProtocol readStructEnd];
+}
+
+- (void) write: (id <TProtocol>) outProtocol {
+[outProtocol writeStructBeginWithName: @"Get_result"];
+
+if (__success_isset) {
+  if (__success != nil) {
+    [outProtocol writeFieldBeginWithName: @"success" type: TType_LIST fieldID: 0];
+    {
+      [outProtocol writeListBeginWithElementType: TType_STRUCT size: [__success count]];
+      int i9;
+      for (i9 = 0; i9 < [__success count]; i9++)
+      {
+        [[__success objectAtIndex: i9] write: outProtocol];
+      }
+      [outProtocol writeListEnd];
+    }
+    [outProtocol writeFieldEnd];
+  }
+}
+[outProtocol writeFieldStop];
+[outProtocol writeStructEnd];
+}
+
+- (void) validate {
+// check for required fields
+}
+
+- (NSString *) description {
+NSMutableString * ms = [NSMutableString stringWithString: @"UserService_Get_result("];
+[ms appendString: @"success:"];
+[ms appendFormat: @"%@", __success];
+[ms appendString: @")"];
+return [NSString stringWithString: ms];
+}
+
+@end
+
+@implementation UserServiceClient
+- (id) initWithProtocol: (id <TProtocol>) protocol
+{
+return [self initWithInProtocol: protocol outProtocol: protocol];
+}
+
+- (id) initWithInProtocol: (id <TProtocol>) anInProtocol outProtocol: (id <TProtocol>) anOutProtocol
+{
+self = [super init];
+inProtocol = [anInProtocol retain_stub];
+outProtocol = [anOutProtocol retain_stub];
+return self;
+}
+
+- (void) dealloc
+{
+[inProtocol release_stub];
+[outProtocol release_stub];
+[super dealloc_stub];
+}
+
+- (void) send_add: (User *) user
+{
+[outProtocol writeMessageBeginWithName: @"add" type: TMessageType_CALL sequenceID: 0];
+[outProtocol writeStructBeginWithName: @"add_args"];
+if (user != nil){
+  [outProtocol writeFieldBeginWithName: @"user" type: TType_STRUCT fieldID: 1];
+  [user write: outProtocol];
+  [outProtocol writeFieldEnd];
+}
+[outProtocol writeFieldStop];
+[outProtocol writeStructEnd];
+[outProtocol writeMessageEnd];
+[[outProtocol transport] flush];
+}
+
+- (void) recv_add
+{
+int msgType = 0;
+[inProtocol readMessageBeginReturningName: nil type: &msgType sequenceID: NULL];
+if (msgType == TMessageType_EXCEPTION) {
+  TApplicationException * x = [TApplicationException read: inProtocol];
+  [inProtocol readMessageEnd];
+  @throw x;
+}
+UserService_Add_result * result = [[[UserService_Add_result alloc] init] autorelease_stub];
+[result read: inProtocol];
+[inProtocol readMessageEnd];
+return;
+}
+
+- (void) add: (User *) user
+{
+[self send_add : user];
+[self recv_add];
+}
+
+- (void) send_get
+{
+[outProtocol writeMessageBeginWithName: @"get" type: TMessageType_CALL sequenceID: 0];
+[outProtocol writeStructBeginWithName: @"get_args"];
+[outProtocol writeFieldStop];
+[outProtocol writeStructEnd];
+[outProtocol writeMessageEnd];
+[[outProtocol transport] flush];
+}
+
+- (NSMutableArray *) recv_get
+{
+int msgType = 0;
+[inProtocol readMessageBeginReturningName: nil type: &msgType sequenceID: NULL];
+if (msgType == TMessageType_EXCEPTION) {
+  TApplicationException * x = [TApplicationException read: inProtocol];
+  [inProtocol readMessageEnd];
+  @throw x;
+}
+UserService_Get_result * result = [[[UserService_Get_result alloc] init] autorelease_stub];
+[result read: inProtocol];
+[inProtocol readMessageEnd];
+if ([result successIsSet]) {
+  return [result success];
+}
+@throw [TApplicationException exceptionWithType: TApplicationException_MISSING_RESULT
+                                         reason: @"get failed: unknown result"];
+}
+
+- (NSMutableArray *) get
+{
+[self send_get];
+return [self recv_get];
+}
+
+@end
+
+@implementation UserServiceProcessor
+
+- (id) initWithUserService: (id <UserService>) service
+{
+self = [super init];
+if (!self) {
+  return nil;
+}
+mService = [service retain_stub];
+mMethodMap = [[NSMutableDictionary dictionary] retain_stub];
+{
+  SEL s = @selector(process_add_withSequenceID:inProtocol:outProtocol:);
+  NSMethodSignature * sig = [self methodSignatureForSelector: s];
+  NSInvocation * invocation = [NSInvocation invocationWithMethodSignature: sig];
+  [invocation setSelector: s];
+  [invocation retainArguments];
+  [mMethodMap setValue: invocation forKey: @"add"];
+}
+{
+  SEL s = @selector(process_get_withSequenceID:inProtocol:outProtocol:);
+  NSMethodSignature * sig = [self methodSignatureForSelector: s];
+  NSInvocation * invocation = [NSInvocation invocationWithMethodSignature: sig];
+  [invocation setSelector: s];
+  [invocation retainArguments];
+  [mMethodMap setValue: invocation forKey: @"get"];
+}
+return self;
+}
+
+- (id<UserService>) service
+{
+  return [[mService retain_stub] autorelease_stub];
+}
+
+- (BOOL) processOnInputProtocol: (id <TProtocol>) inProtocol
+                 outputProtocol: (id <TProtocol>) outProtocol
+{
+  NSString * messageName;
+  int messageType;
+  int seqID;
+  [inProtocol readMessageBeginReturningName: &messageName
+                                       type: &messageType
+                                 sequenceID: &seqID];
+  NSInvocation * invocation = [mMethodMap valueForKey: messageName];
+  if (invocation == nil) {
+    [TProtocolUtil skipType: TType_STRUCT onProtocol: inProtocol];
+    [inProtocol readMessageEnd];
+    TApplicationException * x = [TApplicationException exceptionWithType: TApplicationException_UNKNOWN_METHOD reason: [NSString stringWithFormat: @"Invalid method name: '%@'", messageName]];
+    [outProtocol writeMessageBeginWithName: messageName
+                                      type: TMessageType_EXCEPTION
+                                sequenceID: seqID];
+    [x write: outProtocol];
+    [outProtocol writeMessageEnd];
+    [[outProtocol transport] flush];
+    return YES;
+  }
+  // NSInvocation does not conform to NSCopying protocol
+  NSInvocation * i = [NSInvocation invocationWithMethodSignature: [invocation methodSignature]];
+  [i setSelector: [invocation selector]];
+  [i setArgument: &seqID atIndex: 2];
+  [i setArgument: &inProtocol atIndex: 3];
+  [i setArgument: &outProtocol atIndex: 4];
+  [i setTarget: self];
+  [i invoke];
+  return YES;
+}
+
+- (void) process_add_withSequenceID: (int32_t) seqID inProtocol: (id<TProtocol>) inProtocol outProtocol: (id<TProtocol>) outProtocol
+{
+UserService_add_args * args = [[UserService_add_args alloc] init];
+[args read: inProtocol];
+[inProtocol readMessageEnd];
+UserService_Add_result * result = [[UserService_Add_result alloc] init];
+[mService add: [args user]];
+[outProtocol writeMessageBeginWithName: @"add"
+                                  type: TMessageType_REPLY
+                            sequenceID: seqID];
+[result write: outProtocol];
+[outProtocol writeMessageEnd];
+[[outProtocol transport] flush];
+[result release_stub];
+[args release_stub];
+}
+
+- (void) process_get_withSequenceID: (int32_t) seqID inProtocol: (id<TProtocol>) inProtocol outProtocol: (id<TProtocol>) outProtocol
+{
+UserService_get_args * args = [[UserService_get_args alloc] init];
+[args read: inProtocol];
+[inProtocol readMessageEnd];
+UserService_Get_result * result = [[UserService_Get_result alloc] init];
+[result setSuccess: [mService get]];
+[outProtocol writeMessageBeginWithName: @"get"
+                                  type: TMessageType_REPLY
+                            sequenceID: seqID];
+[result write: outProtocol];
+[outProtocol writeMessageEnd];
+[[outProtocol transport] flush];
+[result release_stub];
+[args release_stub];
+}
+
+- (void) dealloc
+{
+[mService release_stub];
+[mMethodMap release_stub];
+[super dealloc_stub];
 }
 
 @end

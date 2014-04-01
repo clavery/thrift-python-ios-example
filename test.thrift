@@ -31,3 +31,15 @@ service BulletinBoard {
   list<Message> get();
 }
 
+struct User {
+  1: string name;
+}
+
+service UserService {
+  /**
+   * Adds a new message.
+   */
+  void add(1: User user)
+  list<User> get();
+}
+

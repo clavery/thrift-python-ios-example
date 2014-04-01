@@ -86,6 +86,32 @@ typedef BOOL OperationTwo;
 
 @end
 
+@interface User : NSObject <TBase, NSCoding> {
+  NSString * __name;
+
+  BOOL __name_isset;
+}
+
+#if TARGET_OS_IPHONE || (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_5)
+@property (nonatomic, retain, getter=name, setter=setName:) NSString * name;
+#endif
+
+- (id) init;
+- (id) initWithName: (NSString *) name;
+
+- (void) read: (id <TProtocol>) inProtocol;
+- (void) write: (id <TProtocol>) outProtocol;
+
+- (void) validate;
+
+#if !__has_feature(objc_arc)
+- (NSString *) name;
+- (void) setName: (NSString *) name;
+#endif
+- (BOOL) nameIsSet;
+
+@end
+
 @protocol BulletinBoard <NSObject>
 - (void) add: (Message *) msg;  // throws MessageExistsException *, TException
 - (NSMutableArray *) get;  // throws TException
@@ -105,6 +131,27 @@ typedef BOOL OperationTwo;
 }
 - (id) initWithBulletinBoard: (id <BulletinBoard>) service;
 - (id<BulletinBoard>) service;
+@end
+
+@protocol UserService <NSObject>
+- (void) add: (User *) user;  // throws TException
+- (NSMutableArray *) get;  // throws TException
+@end
+
+@interface UserServiceClient : NSObject <UserService> {
+id <TProtocol> inProtocol;
+id <TProtocol> outProtocol;
+}
+- (id) initWithProtocol: (id <TProtocol>) protocol;
+- (id) initWithInProtocol: (id <TProtocol>) inProtocol outProtocol: (id <TProtocol>) outProtocol;
+@end
+
+@interface UserServiceProcessor : NSObject <TProcessor> {
+id <UserService> mService;
+NSDictionary * mMethodMap;
+}
+- (id) initWithUserService: (id <UserService>) service;
+- (id<UserService>) service;
 @end
 
 @interface testConstants : NSObject {

@@ -66,6 +66,8 @@
             [client add:message];
         } @catch(MessageExistsException* e) {
             NSLog(e.message);
+        } @catch(TException* e) {
+            NSLog(@"HTTP Transport Exception");
         }
     }];
 }
@@ -77,7 +79,14 @@
     [services BulletinBoardClient:^(BulletinBoardClient* client) {
         NSLog(@"Making Get Request");
         
-        NSMutableArray* messages = [client get];
+        NSMutableArray* messages;
+        
+        @try {
+            messages = [client get];
+        } @catch(TException* e) {
+            NSLog(@"HTTP Transport Exception");
+            return;
+        }
 
         [messagesRows removeAllObjects];
         
